@@ -1,76 +1,44 @@
-\# Jenkins Docker CI/CD Pipeline 
+# Jenkins Docker CI/CD Pipeline
 
-&#x20;
+## Project Overview
 
-\## Project Overview 
+This project demonstrates a basic CI/CD pipeline using Jenkins and Docker.
 
-&#x20;
+The pipeline automates the following process:
 
-This project demonstrates a basic CI/CD pipeline using Jenkins and Docker. 
+GitHub → Jenkins → Checkout → Build → Test → Deploy → Docker Container
 
-&#x20;
+The application is a simple HTML web application served using Nginx.
 
-The pipeline automates the following process: 
+## Objective
 
-&#x20;
+The objective of this project is to create a simple Jenkins CI/CD pipeline that automates the build, test, and deployment of a Dockerized web application.
 
-GitHub → Jenkins → Checkout → Build → Test → Deploy → Docker Container 
+## Technologies Used
 
-&#x20;
+- Jenkins
+- Docker
+- Docker Desktop
+- Git
+- GitHub
+- Nginx
+- Windows
+- PowerShell
 
-The application is a simple HTML web application served using Nginx. 
-
-&#x20;
-
-\## Objective 
-
-&#x20;
-
-The objective of this project is to create a simple Jenkins CI/CD pipeline that automates the build, test, and deployment of a Dockerized web application. 
-
-&#x20;
-
-\## Technologies Used 
-
-&#x20;
-
-\- Jenkins 
-
-\- Docker 
-
-\- Docker Desktop 
-
-\- Git 
-
-\- GitHub 
-
-\- Nginx 
-
-\- Windows 
-
-\- PowerShell 
-
-&#x20;
-
-\## Project Structure 
-
-&#x20;
+## Project Structure
 
 ```text
-
-jenkins-docker-cicd-task/ 
-
-│ 
-
-├── app/ 
-
-│   └── index.html 
-
-│ 
-
-├── Dockerfile 
-
-├── Jenkinsfile 
-
+jenkins-docker-cicd-task/
+│
+├── app/
+│   └── index.html
+│
+├── screenshots/
+│   ├── Screenshot 2026-10-02 140202.png
+│   ├── Screenshot 2026-10-02 140300.png
+│   ├── Screenshot 2026-10-02 140332.png
+│   └── Screenshot 2026-10-02 141058.png
+│
+├── Dockerfile
+├── Jenkinsfile
 └── README.md
-
