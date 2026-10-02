@@ -12,16 +12,16 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'docker build -t jenkins-docker-app:latest .'
+                bat 'docker build -t jenkins-docker-app:latest .'
             }
         }
 
         stage('Test') {
             steps {
-                sh '''
-                    docker rm -f test-container 2>/dev/null || true
+                bat '''
+                    docker rm -f test-container 2>NUL || exit /b 0
                     docker run -d --name test-container -p 8083:80 jenkins-docker-app:latest
-                    sleep 5
+                    timeout /t 5 /nobreak
                     curl -f http://localhost:8083
                     docker rm -f test-container
                 '''
@@ -30,8 +30,8 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh '''
-                    docker rm -f jenkins-docker-container 2>/dev/null || true
+                bat '''
+                    docker rm -f jenkins-docker-container 2>NUL || exit /b 0
                     docker run -d --name jenkins-docker-container -p 8082:80 jenkins-docker-app:latest
                 '''
             }
